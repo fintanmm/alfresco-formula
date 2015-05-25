@@ -1,3 +1,5 @@
-template:
-  lookup:
-    master: template-master
+alfresco:
+	url: http://dl.alfresco.com/release/community/5.0.d-build-00002/alfresco-community-5.0.d.zip
+	source_hash: 9a5f97fe365188111be67ba6993bcff437b677cf
+ 	lookup:
+    	master: template-master
