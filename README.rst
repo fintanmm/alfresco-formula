@@ -1,9 +1,8 @@
 ================
-template-formula
+alfresco-formula
 ================
 
-A saltstack formula that is empty. It has dummy content to help with a quick
-start on a new formula.
+A saltstack formula that installs and configures Alfresco. An enterprise content management system.
 
 .. note::
 
@@ -16,7 +15,7 @@ Available states
 .. contents::
     :local:
 
-``template``
+``alfresco``
 ------------
 
-Installs the template package, and starts the associated template service.
+Installs the alfresco war file and sets up a basic configuration.
