@@ -18,4 +18,4 @@ Available states
 ``alfresco``
 ------------
 
-Installs the alfresco war file and sets up a basic configuration.
+Downloads the alfresco zip file and extracts it.
