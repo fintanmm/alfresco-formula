@@ -1,10 +1,14 @@
 {% set alfresco = salt['grains.filter_by']({
     'Debian': {
-        'tomcat': '/var/lib/tomcat7/',
-        'jetty': '/var/lib/jetty/'
+        'tomcat_dir': '/var/lib/tomcat7/',
+        'jetty': '/var/lib/jetty/',
+        'user': 'tomcat7',
+        'group': 'tomcat7'
     },
     'Ubuntu': {
-        'tomcat': '/var/lib/tomcat7/',
-        'jetty': '/var/lib/jetty/'
+        'tomcat_dir': '/var/lib/tomcat7/',
+        'jetty': '/var/lib/jetty/',
+        'user': 'tomcat7',
+        'group': 'tomcat7'
     }
 }, merge=salt['pillar.get']('alfresco:lookup')) %}
