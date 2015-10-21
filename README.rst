@@ -20,6 +20,11 @@ Available states
 
 Downloads the alfresco zip file and extracts it.
 
+``alfresco.db``
+------------
+
+Creates/Updates a global-properties file with database configuration.
+
 ``alfresco.repo``
 ------------
 
