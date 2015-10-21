@@ -2,7 +2,7 @@
 alfresco-formula
 ================
 
-A saltstack formula that installs and configures Alfresco. An enterprise content management system.
+A saltstack formula that installs and configures Alfresco community addition. An enterprise content management system.
 
 .. note::
 
