@@ -19,3 +19,13 @@ Available states
 ------------
 
 Downloads the alfresco zip file and extracts it.
+
+``alfresco.repo``
+------------
+
+Copies the alfresco.war file to tomcat webapps directory.
+
+``alfresco.share``
+------------
+
+Copies the alfresco.war file to tomcat webapps directory.
