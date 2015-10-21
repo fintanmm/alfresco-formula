@@ -23,9 +23,9 @@ Downloads the alfresco zip file and extracts it.
 ``alfresco.repo``
 ------------
 
-Copies the alfresco.war file to tomcat webapps directory.
+Copies the alfresco.war file to the tomcat webapps directory. Creates/Updates a global-properties file.
 
 ``alfresco.share``
 ------------
 
-Copies the alfresco.war file to tomcat webapps directory.
+Copies the alfresco.war file to the tomcat webapps directory. Creates/Updates a global-properties file.
