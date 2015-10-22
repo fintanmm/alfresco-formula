@@ -1,11 +1,11 @@
 {% from "alfresco/map.jinja" import alfresco with context %}
 
-{{ alfresco.tomcat_dir }}/shared/classes/alfresco-global.properties:
-  file.managed:
+db-block-replace:
+  file.blockreplace:
+    - name: {{ alfresco.tomcat_dir }}/shared/classes/alfresco-global.properties
     - source: salt://alfresco/files/alfresco-global.properties
-    - user: {{ alfresco.user }}
-    - group: {{ alfresco.group }}
-    - mode: 644
+    - marker_start: "# DB : salt managed zone"
+    - marker_end: "# DB ENDS : salt managed zone --"
     - template: jinja
     - defaults:
         dbtype: '{{ salt['pillar.get']('alfresco:db:type') }}'
