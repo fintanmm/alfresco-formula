@@ -1,5 +1,8 @@
 {% from "alfresco/map.jinja" import alfresco with context %}
 
+include:
+    - .db
+    
 copy-alfresco-war:
   file.copy:
     - name: {{ alfresco.tomcat_dir }}/webapps/alfresco.war
