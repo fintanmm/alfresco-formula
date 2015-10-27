@@ -1,6 +1,6 @@
 {% from "alfresco/map.jinja" import alfresco with context %}
 
-{% set properties_file = [alfresco.tomcat_dir, '/shared/classes/alfresco-global.properties']|join(', ') %}
+{% set properties_file = [alfresco.tomcat_dir, '/shared/classes/alfresco-global.properties']|join('') %}
 
 copy-alfresco-war:
   file.copy:
@@ -27,4 +27,3 @@ repo-block-replace:
     - user: {{ alfresco.user }}
     - group: {{ alfresco.group }}
     - mode: 644
-  
