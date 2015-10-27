@@ -14,11 +14,9 @@ copy-alfresco-war:
 repo-block-replace:
   file.blockreplace:
     - name: {{ properties_file }}
-    - source: salt://alfresco/files/alfresco-global.properties
     - marker_start: "# REPO : salt managed zone"
     - marker_end: "# REPO ENDS : salt managed zone --"
-    - template: jinja
-    - defaults:
+    - context:
         root: '{{ salt['pillar.get']('alfresco:root') }}'
      
 {{ properties_file }}:
