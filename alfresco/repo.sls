@@ -4,7 +4,7 @@
 
 copy-alfresco-war:
   file.copy:
-    - name: {{ alfresco.tomcat_dir }}/webapps/alfresco.war
+    - name: {{ alfresco.tomcat_dir }}webapps/alfresco.war
     - source: /tmp/alfresco-community-{{ salt['pillar.get']('alfresco:version') }}/web-server/webapps/alfresco.war
     - force: False
     - makedirs: True
@@ -18,3 +18,4 @@ repo-block-replace:
     - marker_end: "# REPO ENDS : salt managed zone --"
     - content: |
         dir.root={{ salt['pillar.get']('alfresco:root') }}
+        dir.license.external={{ alfresco.tomcat_dir }}webapps/alfresco
