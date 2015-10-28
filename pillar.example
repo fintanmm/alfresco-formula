@@ -11,4 +11,16 @@ alfresco:
     host: dbserver
     port: 5432
     name: dbname
-
+  cifs:
+    enabled: 'False'
+    serverName: ''
+    domain: ''
+    hostannounce: 'True'
+    ipv6: 'False'
+    tcpipSMB: 445
+    netBIOSSMB:
+      namePort: 137
+      datagramPort: 138
+      sessionPort: 139
+    WINS:
+      autoDetectEnabled: 'True'
