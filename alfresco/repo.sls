@@ -16,8 +16,8 @@ repo-block-replace:
     - name: {{ properties_file }}
     - marker_start: "# REPO : salt managed zone"
     - marker_end: "# REPO ENDS : salt managed zone --"
-    - context:
-        root: '{{ salt['pillar.get']('alfresco:root') }}'
+    - content: |
+        dir.root={{ salt['pillar.get']('alfresco:root') }}
      
 {{ properties_file }}:
   file.managed:

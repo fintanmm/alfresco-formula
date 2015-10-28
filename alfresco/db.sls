@@ -5,7 +5,7 @@ db-block-replace:
     - name: {{ alfresco.tomcat_dir }}/shared/classes/alfresco-global.properties
     - marker_start: "# DB : salt managed zone"
     - marker_end: "# DB ENDS : salt managed zone --"
-    - context:
+    - content:
         dbtype: '{{ salt['pillar.get']('alfresco:db:type') }}'
         dbdriver: '{{ salt['pillar.get']('alfresco:db:driver') }}'
         dbuser: '{{ salt['pillar.get']('alfresco:db:username') }}'
