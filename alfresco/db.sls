@@ -13,4 +13,4 @@ db-block-replace:
         db.port={{ salt['pillar.get']('alfresco:db:port') }}
         db.name={{ salt['pillar.get']('alfresco:db:name') }}
         db.url=jdbc:{{ salt['pillar.get']('alfresco:db:type') }}://${db.host}:${db.port}/${db.name}
-        db.schema.update={{ salt['pillar.get']('alfresco:db:update', 'false') }
+        db.schema.update={{ salt['pillar.get']('alfresco:db:update', 'false') }}
