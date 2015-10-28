@@ -10,14 +10,6 @@ copy-alfresco-war:
     - makedirs: True
     - user: {{ alfresco.user }}
     - group: {{ alfresco.group }}
-     
-{{ properties_file }}:
-  file.managed:
-    - source: salt://alfresco/files/alfresco-global.properties
-    - user: {{ alfresco.user }}
-    - group: {{ alfresco.group }}
-    - mode: 644
-    - replace: False
 
 repo-block-replace:
   file.blockreplace:
