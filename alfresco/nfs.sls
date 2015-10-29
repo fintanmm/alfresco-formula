@@ -15,4 +15,3 @@ nfs-block-replace:
         nfs.portMapperEnabled={{ salt['pillar.get']('alfresco:nfs:portMapperEnabled', 'false') }}
         nfs.sessionDebug={{ salt['pillar.get']('alfresco:nfs:sessionDebug', '') }}  
         nfs.mountServerDebug={{ salt['pillar.get']('alfresco:nfs:mountServerDebug', 'false') }}
-           
