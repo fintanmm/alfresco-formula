@@ -15,4 +15,4 @@ cifs-block-replace:
         cifs.netBIOSSMB.namePort={{ salt['pillar.get']('alfresco:cifs:netBIOSSMB:namePort', 137) }}
         cifs.netBIOSSMB.datagramPort={{ salt['pillar.get']('alfresco:cifs:netBIOSSMB:datagramPort', 138) }}
         cifs.netBIOSSMB.sessionPort={{ salt['pillar.get']('alfresco:cifs:netBIOSSMB:sessionPort', 139) }}
-        cifs.WINS.autoDetectEnabled={{ salt['pillar.get']('alfresco:cifs:WINS:autoDetectEnabled', 'True') }
+        cifs.WINS.autoDetectEnabled={{ salt['pillar.get']('alfresco:cifs:WINS:autoDetectEnabled', 'True') }}
