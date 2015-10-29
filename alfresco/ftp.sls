@@ -6,14 +6,14 @@ ftp-block-replace:
     - marker_start: "# FTP : salt managed zone"
     - marker_end: "# FTP ENDS : salt managed zone --"
     - content: |
-      ftp.enabled={{ salt['pillar.get']('alfresco:ftp_enabled', 'false') }}
-      ftp.port={{ salt['pillar.get']('alfresco:ftp:port', '2121') }}
-      ftp.bindto={{ salt['pillar.get']('alfresco:ftp:bindto', '') }}
-      ftp.dataPortFrom={{ salt['pillar.get']('alfresco:ftp:dataPortFrom', '0') }}
-      ftp.dataPortTo={{ salt['pillar.get']('alfresco:ftp:dataPortTo', '0') }}
-      ftp.keyStore={{ salt['pillar.get']('alfresco:ftp:keyStore', '') }}
-      ftp.trustStore={{ salt['pillar.get']('alfresco:ftp:trustStore', '') }}
-      ftp.passphrase={{ salt['pillar.get']('alfresco:ftp:passphrase', '') }}
-      ftp.requireSecureSession={{ salt['pillar.get']('alfresco:ftp:requireSecureSession', 'true') }}
-      ftp.sslEngineDebug={{ salt['pillar.get']('alfresco:ftp:sslEngineDebug', 'false') }}
-      ftp.sessionDebug={{ salt['pillar.get']('alfresco:ftp:sessionDebug', 'false') }}
+        ftp.enabled={{ salt['pillar.get']('alfresco:ftp_enabled', 'false') }}
+        ftp.port={{ salt['pillar.get']('alfresco:ftp:port', '2121') }}
+        ftp.bindto={{ salt['pillar.get']('alfresco:ftp:bindto', '') }}
+        ftp.dataPortFrom={{ salt['pillar.get']('alfresco:ftp:dataPortFrom', '0') }}
+        ftp.dataPortTo={{ salt['pillar.get']('alfresco:ftp:dataPortTo', '0') }}
+        ftp.keyStore={{ salt['pillar.get']('alfresco:ftp:keyStore', '') }}
+        ftp.trustStore={{ salt['pillar.get']('alfresco:ftp:trustStore', '') }}
+        ftp.passphrase={{ salt['pillar.get']('alfresco:ftp:passphrase', '') }}
+        ftp.requireSecureSession={{ salt['pillar.get']('alfresco:ftp:requireSecureSession', 'true') }}
+        ftp.sslEngineDebug={{ salt['pillar.get']('alfresco:ftp:sslEngineDebug', 'false') }}
+        ftp.sessionDebug={{ salt['pillar.get']('alfresco:ftp:sessionDebug', 'false') }}
