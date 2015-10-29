@@ -55,4 +55,9 @@ Enables ftp support within the global-properties file.
 
 Enables imap support within the global-properties file.
 
+``alfresco.smtp``
+------------
+
+Enables smtp support within the global-properties file.
+
 

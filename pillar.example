@@ -56,3 +56,11 @@ alfresco:
     store: '${spaces.store}'
     rootPath: '/${spaces.company_home.childname}'
     folderPath: 'cm:Imap Home'    
+  mail:
+    host: '0.0.0.0'
+    port: 25
+    username: 'anonymous'
+    password: ''
+    protocol: 'smtp'
+    encoding: 'UTF-8'
+    siteinvite: 'False'
