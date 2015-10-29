@@ -6,7 +6,7 @@ cifs-block-replace:
     - marker_start: "# CIFS : salt managed zone"
     - marker_end: "# CIFS ENDS : salt managed zone --"
     - content: |
-        cifs.enabled=={{ salt['pillar.get']('alfresco:cifs:enabled', 'False') }}
+        cifs.enabled={{ salt['pillar.get']('alfresco:cifs:enabled', 'False') }}
         cifs.serverName={{ salt['pillar.get']('alfresco:cifs:serverName', '${localname}A') }}
         cifs.domain={{ salt['pillar.get']('alfresco:cifs:domain') }}
         cifs.hostannounce={{ salt['pillar.get']('alfresco:cifs:hostannounce', 'True') }}
