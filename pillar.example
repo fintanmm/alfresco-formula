@@ -24,3 +24,13 @@ alfresco:
       sessionPort: 139
     WINS:
       autoDetectEnabled: 'True'
+  nfs:
+    enabled: 'False'
+    nodeMonitor: '${nfs.enabled}'
+    mountServerPort: 0
+    nfsServerPort: 2049
+    rpcRegisterPort: 0
+    portMapperPort: 111
+    portMapperEnabled: 'False'
+    sessionDebug: 'False'
+    mountServerDebug: 'False'

@@ -18,24 +18,29 @@ Available states
 ``alfresco``
 ------------
 
-Downloads the alfresco zip file and extracts it.
+Downloads the alfresco zip file and extracts it. Then creates the global-properties file.
 
 ``alfresco.db``
 ------------
 
-Creates/Updates the global-properties file with database configuration.
+Updates the global-properties file with database configuration.
 
 ``alfresco.repo``
 ------------
 
-Copies the alfresco.war file to the tomcat webapps directory. Creates/Updates the global-properties file.
+Copies the alfresco.war file to the tomcat webapps directory. Updates the global-properties file.
 
 ``alfresco.share``
 ------------
 
-Copies the alfresco.war file to the tomcat webapps directory. Creates/Updates the global-properties file.
+Copies the alfresco.war file to the tomcat webapps directory. Updates the global-properties file.
 
 ``alfresco.cifs``
 ------------
 
-Creates/Updates the global-properties file with cifs configuration.
+Enables cifs support then updates the global-properties file with the required configuration.
+
+``alfresco.nfs``
+------------
+
+Enables cifs support then updates the global-properties file with the required configuration.
