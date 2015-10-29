@@ -50,4 +50,9 @@ Enables nfs support within the global-properties file.
 
 Enables ftp support within the global-properties file.
 
+``alfresco.imap``
+------------
+
+Enables imap support within the global-properties file.
+
 

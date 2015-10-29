@@ -46,3 +46,13 @@ alfresco:
     requireSecureSession:'True'
     sslEngineDebug:'False'
     sessionDebug: 'False'
+  imap:
+    enabled: 'False'
+    host: '0.0.0.0'
+    port: '143'
+    from: 'alfresco@demo.alfresco.org'
+    to: 'alfresco@demo.alfresco.org'
+    attachments: 'False'
+    store: '${spaces.store}'
+    rootPath: '/${spaces.company_home.childname}'
+    folderPath: 'cm:Imap Home'    
