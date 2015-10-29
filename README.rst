@@ -38,9 +38,16 @@ Copies the alfresco.war file to the tomcat webapps directory. Updates the global
 ``alfresco.cifs``
 ------------
 
-Enables cifs support then updates the global-properties file with the required configuration.
+Enables cifs support within the global-properties file.
 
 ``alfresco.nfs``
 ------------
 
-Enables cifs support then updates the global-properties file with the required configuration.
+Enables nfs support within the global-properties file.
+
+``alfresco.ftp``
+------------
+
+Enables ftp support within the global-properties file.
+
+
