@@ -68,10 +68,14 @@ Enables smtp support within the global-properties file.
 
 Enables ntlm authentication support within the global-properties file.
 
-
 ``alfresco.passthru``
 ------------
 
 Enables passthru authentication support within the global-properties file.
+
+``alfresco.ldap``
+------------
+
+Enables ldap authentication support within the global-properties file.
 
 
