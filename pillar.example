@@ -73,3 +73,18 @@ alfresco:
       domain: 'alfresco.org'
       allowed: '*.alfresco.org'
       blocked: '*.alfresco.org'
+  auth:
+    ntlm:
+      sso: 'False'
+      mapUnknownUserToGuest: 'False'
+    passthru:
+      useLocalServer: 'False'
+      domain: 'company.ad'
+      servers: 'company.ad\\19.168.1.2,19.168.1.3'
+      guestAccess: 'False'
+      defaultAdministratorUserNames: ''
+      connectTimeout: 5000
+      offlineCheckInterval: 300
+      protocolOrder: 'NetBIOS,TCPIP'
+      authenticateCIFS: 'False'
+      authenticateFTP: 'False'      
