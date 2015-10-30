@@ -64,3 +64,12 @@ alfresco:
     protocol: 'smtp'
     encoding: 'UTF-8'
     siteinvite: 'False'
+    starttls: 'False'
+    auth: 'False'
+    timeout: 30000
+    server:
+      enabled: 'False'
+      port: 25
+      domain: 'alfresco.org'
+      allowed: '*.alfresco.org'
+      blocked: '*.alfresco.org'

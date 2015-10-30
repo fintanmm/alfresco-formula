@@ -9,6 +9,9 @@ A saltstack formula that installs and configures Alfresco community addition. An
     See the full `Salt Formulas installation and usage instructions
     <http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>`_.
 
+.. note::
+    No checks are in place to insure that the authentication chain is correct. 
+
 Available states
 ================
 
@@ -59,5 +62,10 @@ Enables imap support within the global-properties file.
 ------------
 
 Enables smtp support within the global-properties file.
+
+``alfresco.passthru``
+------------
+
+Enables passthru authentication support within the global-properties file.
 
 
