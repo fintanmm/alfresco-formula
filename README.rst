@@ -53,12 +53,12 @@ Updates the global-properties file with url configuration.
 ``alfresco.repo``
 ------------
 
-Copies the alfresco.war file to the tomcat webapps directory. Updates the global-properties file.
+Copies the alfresco.war file to the tomcat webapps directory. Updates the global-properties file with the url configuration.
 
 ``alfresco.share``
 ------------
 
-Copies the share.war file to the tomcat webapps directory. Updates the global-properties file.
+Copies the share.war file to the tomcat webapps directory. Updates the global-properties file with the url configuration.
 
 ``alfresco.solr``
 ------------
