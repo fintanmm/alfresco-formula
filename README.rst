@@ -64,6 +64,11 @@ Enables imap support within the global-properties file.
 
 Enables smtp support within the global-properties file.
 
+``alfresco.chain``
+------------
+
+Enables the authenticaion chain support within the global-properties file.
+
 ``alfresco.ntlm``
 ------------
 
