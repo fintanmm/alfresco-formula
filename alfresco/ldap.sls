@@ -35,7 +35,7 @@ ldap-sync block-replace:
         ldap.synchronization.groupSearchBase={{ salt['pillar.get']('alfresco:auth:ldap:sync:groupSearchBase', '') }}
         ldap.synchronization.userSearchBase={{ salt['pillar.get']('alfresco:auth:ldap:sync:userSearchBase', '') }}
         ldap.synchronization.modifyTimestampAttributeName={{ salt['pillar.get']('alfresco:auth:ldap:sync:modifyTimestampAttributeName', 'modifyTimestamp') }}
-        ldap.synchronization.timestampFormat={{ salt['pillar.get']('alfresco:auth:ldap:sync:timestampFormat', 'yyyyMMddHHmmss'.0Z') }}'
+        ldap.synchronization.timestampFormat={{ salt['pillar.get']('alfresco:auth:ldap:sync:timestampFormat', "yyyyMMddHHmmss'.0Z") }}'
         ldap.synchronization.userIdAttributeName={{ salt['pillar.get']('alfresco:auth:ldap:sync:userIdAttributeName', 'sAMAccountName') }}
         ldap.synchronization.userFirstNameAttributeName={{ salt['pillar.get']('alfresco:auth:ldap:sync:userFirstNameAttributeName', 'givenName') }}
         ldap.synchronization.userLastNameAttributeName={{ salt['pillar.get']('alfresco:auth:ldap:sync:userLastNameAttributeName', 'sn') }}

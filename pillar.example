@@ -112,7 +112,7 @@ alfresco:
         groupSearchBase: 'ou\=alfresco,dc\=company,dc\=ad'
         userSearchBase: 'ou\=alfresco,dc\=company,dc\=ad'
         modifyTimestampAttributeName: 'modifyTimestamp'
-        timestampFormat: 'yyyyMMddHHmmss'.0Z''
+        timestampFormat: "yyyyMMddHHmmss'.0Z"
         userIdAttributeName: 'sAMAccountName'
         userFirstNameAttributeName: 'givenName'
         userLastNameAttributeName: 'sn'
