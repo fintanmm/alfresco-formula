@@ -16,7 +16,7 @@ ldap-ad-block-replace:
         ldap.authentication.escapeCommasInUid={{ salt['pillar.get']('alfresco:auth:ldap:escapeCommasInUid', 'False') }}
         ldap.authentication.defaultAdministratorUserNames={{ salt['pillar.get']('alfresco:auth:ldap:defaultAdministratorUserNames', '') }}
 
-ldap-ad-sync block-replace:
+ldap-ad-sync-block-replace:
   file.blockreplace:
     - name: {{ alfresco.tomcat_dir }}/shared/classes/alfresco-global.properties
     - marker_start: "# LDAP AD SYNCHRONIZATION : salt managed zone"
