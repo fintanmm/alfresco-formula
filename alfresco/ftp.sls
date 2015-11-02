@@ -9,8 +9,8 @@ ftp-block-replace:
         ftp.enabled={{ salt['pillar.get']('alfresco:ftp_enabled', 'false') }}
         ftp.port={{ salt['pillar.get']('alfresco:ftp:port', '2121') }}
         ftp.bindto={{ salt['pillar.get']('alfresco:ftp:bindto', '') }}
-        ftp.dataPortFrom={{ salt['pillar.get']('alfresco:ftp:dataPortFrom', '0') }}
-        ftp.dataPortTo={{ salt['pillar.get']('alfresco:ftp:dataPortTo', '0') }}
+        ftp.dataPortFrom={{ salt['pillar.get']('alfresco:ftp:dataPortFrom', '') }}
+        ftp.dataPortTo={{ salt['pillar.get']('alfresco:ftp:dataPortTo', '') }}
         ftp.keyStore={{ salt['pillar.get']('alfresco:ftp:keyStore', '') }}
         ftp.trustStore={{ salt['pillar.get']('alfresco:ftp:trustStore', '') }}
         ftp.passphrase={{ salt['pillar.get']('alfresco:ftp:passphrase', '') }}

@@ -78,4 +78,7 @@ Enables passthru authentication support within the global-properties file.
 
 Enables ldap authentication support within the global-properties file.
 
+``alfresco.ldap-ad``
+------------
 
+Enables ldap-ad authentication support within the global-properties file.
