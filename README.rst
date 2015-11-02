@@ -13,6 +13,22 @@ A saltstack formula that installs and configures Alfresco community addition. An
 
 *No checks are in place to insure that the authentication chain is correct.*
 
+TODO
+================
+* solr
+* keystores
+* url(s)
+* office
+* replication
+* file transfers
+* backup 
+* restore
+* auditing
+* logging
+* kerberos
+* sso
+* imap attachments
+
 Available states
 ================
 
@@ -38,6 +54,11 @@ Copies the alfresco.war file to the tomcat webapps directory. Updates the global
 ------------
 
 Copies the alfresco.war file to the tomcat webapps directory. Updates the global-properties file.
+
+``alfresco.solr``
+------------
+
+Copies the needed solr files/directories to the specified directory. Updates the global-properties file.
 
 ``alfresco.cifs``
 ------------
