@@ -3,6 +3,17 @@ alfresco:
   source_hash: sha1=9a5f97fe365188111be67ba6993bcff437b677cf
   version: 5.0.d
   root: /data/alf_data
+  url:
+    alfresco:
+      context: 'alfresco'
+      host: 'localhost'
+      port: 8080
+      protocol: 'https'
+    share:
+      context: 'share'
+      host: 'localhost'
+      port: 8080
+      protocol: 'https'
   db:
     type: postgresql
     driver: 'org.postgresql.Driver'
@@ -11,6 +22,9 @@ alfresco:
     host: dbserver
     port: 5432
     name: dbname
+  solr:
+    host: 'localhost'
+    port: 8443
   cifs:
     enabled: 'False'
     serverName: ''

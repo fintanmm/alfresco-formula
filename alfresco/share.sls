@@ -1,5 +1,8 @@
 {% from "alfresco/map.jinja" import alfresco with context %}
 
+include:
+  - .url
+
 copy-share-war:
   file.copy:
     - name: {{ alfresco.tomcat_dir }}/webapps/share.war

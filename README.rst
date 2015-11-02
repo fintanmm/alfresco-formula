@@ -45,6 +45,11 @@ Downloads the alfresco zip file and extracts it. Then creates the global-propert
 
 Updates the global-properties file with database configuration.
 
+``alfresco.url``
+------------
+
+Updates the global-properties file with url configuration.
+
 ``alfresco.repo``
 ------------
 
@@ -53,7 +58,7 @@ Copies the alfresco.war file to the tomcat webapps directory. Updates the global
 ``alfresco.share``
 ------------
 
-Copies the alfresco.war file to the tomcat webapps directory. Updates the global-properties file.
+Copies the share.war file to the tomcat webapps directory. Updates the global-properties file.
 
 ``alfresco.solr``
 ------------
