@@ -4,7 +4,7 @@
 {% set passthru = salt['pillar.get']('alfresco:auth:passthru:enabled')|title %}
 {% set kerberos = salt['pillar.get']('alfresco:auth:kerberos:enabled')|title %}
 
-{% if ntlm = 'True' or passthru = 'True' or kerberos = 'True' %}
+{% if ntlm == 'True' or passthru == 'True' or kerberos == 'True' %}
 cifs-block-replace:
   file.blockreplace:
     - name: {{ alfresco.tomcat_dir }}/shared/classes/alfresco-global.properties
