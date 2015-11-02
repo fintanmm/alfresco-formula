@@ -1,5 +1,10 @@
 {% from "alfresco/map.jinja" import alfresco with context %}
 
+{% set ntlm = salt['pillar.get']('alfresco:auth:ntlm:enabled')|title %}
+{% set passthru = salt['pillar.get']('alfresco:auth:passthru:enabled')|title %}
+{% set kerberos = salt['pillar.get']('alfresco:auth:kerberos:enabled')|title %}
+
+{% if ntlm = 'True' or passthru = 'True' or kerberos = 'True' %}
 cifs-block-replace:
   file.blockreplace:
     - name: {{ alfresco.tomcat_dir }}/shared/classes/alfresco-global.properties
@@ -16,3 +21,4 @@ cifs-block-replace:
         cifs.netBIOSSMB.datagramPort={{ salt['pillar.get']('alfresco:cifs:netBIOSSMB:datagramPort', 138) }}
         cifs.netBIOSSMB.sessionPort={{ salt['pillar.get']('alfresco:cifs:netBIOSSMB:sessionPort', 139) }}
         cifs.WINS.autoDetectEnabled={{ salt['pillar.get']('alfresco:cifs:WINS:autoDetectEnabled', 'True') }}
+{% endif %}        

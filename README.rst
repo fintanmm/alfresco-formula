@@ -9,8 +9,9 @@ A saltstack formula that installs and configures Alfresco community addition. An
     See the full `Salt Formulas installation and usage instructions
     <http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>`_.
 
-.. note::
-    No checks are in place to insure that the authentication chain is correct. 
+[Authentication Documentation](http://docs.alfresco.com/community/concepts/auth-subsystem-types.html)
+
+*No checks are in place to insure that the authentication chain is correct.*
 
 Available states
 ================
@@ -82,3 +83,13 @@ Enables ldap authentication support within the global-properties file.
 ------------
 
 Enables ldap-ad authentication support within the global-properties file.
+
+``alfresco.kerberos``
+------------
+
+Placeholder for enabling kerberos authentication support within the global-properties file.
+
+``alfresco.external``
+------------
+
+Placeholder for enabling external authentication support within the global-properties file.
