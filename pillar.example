@@ -7,12 +7,12 @@ alfresco:
     alfresco:
       context: 'alfresco'
       host: 'localhost'
-      port: 8080
+      port: 8443
       protocol: 'https'
     share:
       context: 'share'
       host: 'localhost'
-      port: 8080
+      port: 8443
       protocol: 'https'
   db:
     type: postgresql
