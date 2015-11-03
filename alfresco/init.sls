@@ -3,7 +3,7 @@
 alfresco-get:
   archive.extracted:
     - name: /tmp/
-    - source: {{ salt['pillar.get']('alfresco:url') }}
+    - source: {{ salt['pillar.get']('alfresco:source') }}
     - source_hash: {{ salt['pillar.get']('alfresco:source_hash') }}
     - archive_format: zip
     - if_missing:  /tmp/alfresco-community-{{ salt['pillar.get']('alfresco:version') }}
