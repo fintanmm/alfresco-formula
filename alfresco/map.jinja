@@ -2,11 +2,13 @@
     'Debian': {
         'tomcat_dir': '/var/lib/tomcat7/',
         'user': 'tomcat7',
-        'group': 'tomcat7'
+        'group': 'tomcat7',
+        'service': 'tomcat7'
     },
     'Ubuntu': {
         'tomcat_dir': '/var/lib/tomcat7/',
         'user': 'tomcat7',
-        'group': 'tomcat7'
+        'group': 'tomcat7',
+        'service': 'tomcat7'
     }
 }, merge=salt['pillar.get']('alfresco:lookup')) %}

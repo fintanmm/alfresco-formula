@@ -17,3 +17,4 @@ alfresco-get:
     - makedirs: True
     - replace: False
 
+#TODO: Copy folders from shared directory and licenses directory

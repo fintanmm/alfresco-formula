@@ -24,7 +24,8 @@ alfresco:
     name: dbname
   solr:
     host: 'localhost'
-    port: 8443
+    port: 8080
+    ssl: 8443
   cifs:
     enabled: 'False'
     serverName: ''
@@ -92,9 +93,11 @@ alfresco:
   auth:
     chain: 'alfrescoNtlm1:alfrescoNtlm,passthru1:passthru,ldap1:ldap'
     ntlm:
+      enabled: 'False'
       sso: 'False'
       mapUnknownUserToGuest: 'False'
     passthru:
+      enabled: 'False'
       useLocalServer: 'False'
       domain: 'company.ad'
       servers: 'company.ad\\19.168.1.2,19.168.1.3'

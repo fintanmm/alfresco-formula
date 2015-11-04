@@ -17,7 +17,6 @@ TODO
 ================
 * solr
 * keystores
-* url(s)
 * office
 * replication
 * file transfers
@@ -28,6 +27,7 @@ TODO
 * kerberos
 * sso
 * imap attachments
+* amps
 
 Available states
 ================
