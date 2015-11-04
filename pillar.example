@@ -24,7 +24,7 @@ alfresco:
     name: dbname
   solr:
     host: 'localhost'
-    port: 8080
+    port: 8090
     ssl: 8443
   cifs:
     enabled: 'False'

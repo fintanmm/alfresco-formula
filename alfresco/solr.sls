@@ -33,8 +33,24 @@ solr-block-replace:
         index.subsystem.name=solr4
         dir.keystore=${dir.root}/keystore
         solr.host={{ salt['pillar.get']('alfresco:solr:host', salt['grains.get']('host')) }}
-        solr.port={{ salt['pillar.get']('alfresco:solr:port', 8080) }}
+        solr.port={{ salt['pillar.get']('alfresco:solr:port', 8090) }}
         solr.port.ssl={{ salt['pillar.get']('alfresco:solr:ssl', 8443) }}
+
+{{ salt['pillar.get']('alfresco:root')}}/solr4/archive-SpacesStore/conf/solrcore.properties:
+    file.replace:
+        - pattern: '@@ALFRESCO_SOLR4_DATA_DIR@@'
+        - repl: "{{ salt['pillar.get']('alfresco:root') }}/solr4"
+        - user: {{ alfresco.user }}
+        - group: {{ alfresco.group }}
+        - mode: 644
+
+{{ salt['pillar.get']('alfresco:root')}}/solr4/workspace-SpacesStore/conf/solrcore.properties:
+    file.replace:
+        - pattern: '@@ALFRESCO_SOLR4_DATA_DIR@@'
+        - repl: "{{ salt['pillar.get']('alfresco:root') }}/solr4"
+        - user: {{ alfresco.user }}
+        - group: {{ alfresco.group }}
+        - mode: 644
 
 # {{ alfresco.service }}:
 #   service.running:
