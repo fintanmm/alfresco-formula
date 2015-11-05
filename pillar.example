@@ -50,18 +50,16 @@ alfresco:
     sessionDebug: 'False'
     mountServerDebug: 'False'
   ftp:
-    enabled:'False'
-    port:'2121'
+    enabled: 'False'
+    port: '2121'
     bindto: ''
-    dataPortFrom:''
-    # Limits the data ports to a specific range of ports. This property sets the lower limit.
-    dataPortTo:''
-    # Limits the data ports to a specific range of ports. This property sets the upper limit.
+    dataPortFrom: ''
+    dataPortTo: ''
     keyStore: ''
     trustStore: ''
     passphrase: ''
-    requireSecureSession:'True'
-    sslEngineDebug:'False'
+    requireSecureSession: 'True'
+    sslEngineDebug: 'False'
     sessionDebug: 'False'
   imap:
     enabled: 'False'
