@@ -1,0 +1,4 @@
+*.sublime*
+*.zip
+h2*.jar
+db/*
