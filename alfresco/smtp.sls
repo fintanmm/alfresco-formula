@@ -38,7 +38,7 @@ InboundSMTP-block-replace:
       email.inbound.unknownUser={{ salt['pillar.get']('alfresco:mail:username', 'anonymous') }}
       email.server.enabled={{ salt['pillar.get']('alfresco:mail:server:enabled', 'False') }}
       email.server.port={{ salt['pillar.get']('alfresco:mail:server:port', 25) }}
-      email.server.domain={{ salt['pillar.get']('alfresco:mail:server:domain', salt['grains.get']('domain']) ) }}
-      email.server.allowed.senders={{ salt['pillar.get']('alfresco:mail:server:allowed', salt['grains.get']('domain']) ) }}
-      email.server.blocked.senders={{ salt['pillar.get']('alfresco:mail:server:blocked', salt['grains.get']('domain']) ) }}
+      email.server.domain={{ salt['pillar.get']('alfresco:mail:server:domain', salt['grains.get']('domain')) }}
+      email.server.allowed.senders={{ salt['pillar.get']('alfresco:mail:server:allowed', salt['grains.get']('domain') ) }}
+      email.server.blocked.senders={{ salt['pillar.get']('alfresco:mail:server:blocked', salt['grains.get']('domain') ) }}
              
