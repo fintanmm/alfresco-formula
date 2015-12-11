@@ -19,10 +19,8 @@ alfresco-get:
 
 /etc/tomcat7/catalina.properties:
   file.replace:
-    - pattern: |
-      shared\.loader=\${catalina\.home}/shared/classes,\${catalina\.home}/shared/\*\.jar
-    - repl: |
-      shared\.loader=\${catalina\.home}/shared/classes,\${catalina\.home}/shared/\*\.jar,\${catalina\.base}/shared/classes,\${catalina\.base}/shared/\*\.jar
+    - pattern: "shared.loader="
+    - repl: "shared.loader=${catalina.base}/shared/classes,${catalina.base}/shared/*.jar,"
     - backup: True
 
 #TODO: Copy folders from shared directory and licenses directory
