@@ -24,3 +24,8 @@ db-block-replace:
             {% endif %}
         {% endif %}
         db.schema.update={{ salt['pillar.get']('alfresco:db:update', 'false') }}
+
+/usr/share/java/{{ dbtype }}.jar:
+    file.symlink:
+        - target: /usr/share/tomcat7/lib/{{ dbtype }}.jar
+        - makedirs: False
