@@ -25,7 +25,6 @@ repo-block-replace:
 
 {{ salt['pillar.get']('alfresco:root') }}:
     file.managed:
-        - source: salt:/{{ salt['pillar.get']('alfresco:root') }}
         - user: {{ alfresco.user }}
         - group: {{ alfresco.group }}   
         - mode: 644
