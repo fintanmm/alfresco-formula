@@ -22,3 +22,11 @@ repo-block-replace:
     - content: |
         dir.root={{ salt['pillar.get']('alfresco:root') }}
         dir.license.external={{ alfresco.tomcat_dir }}webapps/alfresco
+
+{{ salt['pillar.get']('alfresco:root') }}:
+    file.managed:
+        - source: salt:/{{ salt['pillar.get']('alfresco:root') }}
+        - user: {{ alfresco.user }}
+        - group: {{ alfresco.group }}   
+        - mode: 644
+        - makedirs: True
