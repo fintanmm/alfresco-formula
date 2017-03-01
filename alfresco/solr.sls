@@ -10,6 +10,29 @@ copy-solr-war:
     - user: {{ alfresco.user }}
     - group: {{ alfresco.group }}
 
+#TODO: Copy solr4 directory
+
+{{ salt['pillar.get']('alfresco:root') }}/solr4:
+    file.managed:
+        - user: {{ alfresco.user }}
+        - group: {{ alfresco.group }}
+        - mode: 644
+        - makedirs: True
+
+{{ salt['pillar.get']('alfresco:root') }}/solr4/model:
+    file.managed:
+        - user: {{ alfresco.user }}
+        - group: {{ alfresco.group }}
+        - mode: 644
+        - makedirs: True
+
+{{ salt['pillar.get']('alfresco:root') }}/solr4/content:
+    file.managed:
+        - user: {{ alfresco.user }}
+        - group: {{ alfresco.group }}
+        - mode: 644
+        - makedirs: True
+
 {{ alfresco.tomcat_dir }}conf/Catalina/localhost/solr4.xml:
   file.managed:
     - source: salt://alfresco/files/context.xml
@@ -20,7 +43,7 @@ copy-solr-war:
     - mode: 644   
     - template: jinja
     - defaults:
-        home: '{{ alfresco.tomcat_dir }}webapps/'
+        home: "{{ salt['pillar.get']('alfresco:root') }}/solr4"
         model: "{{ salt['pillar.get']('alfresco:root') }}/solr4/model"
         content: "{{ salt['pillar.get']('alfresco:root') }}/solr4/content"
 
@@ -36,8 +59,18 @@ solr-block-replace:
         solr.port={{ salt['pillar.get']('alfresco:solr:port', 8090) }}
         solr.port.ssl={{ salt['pillar.get']('alfresco:solr:ssl', 8443) }}
 
-{{ alfresco.service }}:
+{{ salt['pillar.get']('alfresco:solr:directory') }}:
+    file.managed:
+        - source: {{ salt['pillar.get']('alfresco:solr:directory') }}
+        - user: tomcat7
+        - group: tomcat7
+        - mode: 644
+        - makedirs: True
+#TODO: Only start then stop service on installation
+
+service-start:
   service.running:
+    - name: {{ alfresco.service }}
     - enable: True
 
 # {{ salt['pillar.get']('alfresco:root')}}/solr4/archive-SpacesStore/conf/solrcore.properties:
@@ -50,5 +83,8 @@ solr-block-replace:
 #         - pattern: '@@ALFRESCO_SOLR4_DATA_DIR@@'
 #         - repl: "{{ salt['pillar.get']('alfresco:root') }}/solr4"
 
-{{ alfresco.service }}:
-  service.dead:
+# service-stop:
+#   service.dead:
+#     - name: {{ alfresco.service }}
+#     - watch: 
+#         - service: service-start
