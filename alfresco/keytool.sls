@@ -11,7 +11,7 @@
 
 {{ salt['pillar.get']('alfresco:root') }}/keystore/keystore-passwords.properties:
     file.managed:
-        - source: salt:/keystore/keystore-passwords.properties
+        - source: salt://alfresco/files/keystore-passwords.properties
         - user: {{ alfresco.user }}
         - group: {{ alfresco.user }}
         - mode: 600
@@ -22,3 +22,4 @@
 # keystore:
     # cmd.run:
         # - "keytool -genseckey -alias metadata -keypass {{ salt['pillar.get']('alfresco:solr:password') }} -storepass {{ salt['pillar.get']('alfresco:solr:password') }} -keystore {{ salt['pillar.get']('alfresco:solr:keystore') }} -storetype JCEKS -keyalg DESede
+    # if_only
