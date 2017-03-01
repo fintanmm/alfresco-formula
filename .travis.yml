@@ -1,0 +1,24 @@
+language: java
+
+rvm:
+  - 2.2.5
+
+sudo: required
+services: 
+  - docker
+
+env:
+  matrix:
+  - INSTANCE: share-ubuntu-1404
+
+
+# https://github.com/zuazo/kitchen-in-travis-native/issues/1#issuecomment-142455888
+before_script: sudo iptables -L DOCKER || sudo iptables -N DOCKER
+
+install:
+  # setup ci for test formula
+  - export BUNDLE_GEMFILE=$PWD/Gemfile
+  - git clone https://github.com/saltstack-formulas/tomcat-formula.git /tmp/tomcat
+  - bundle install
+
+script: bundle exec kitchen verify ${INSTANCE}
