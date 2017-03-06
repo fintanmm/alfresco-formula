@@ -15,13 +15,13 @@ alfresco:
       port: 8443
       protocol: 'https'
   db:
-    type: postgresql
-    driver: 'org.postgresql.Driver'
-    username: username
-    password: password
-    host: dbserver
-    port: 5432
-    name: dbname
+    type: h2
+    driver: 'org.h2.Driver'
+    username: sa
+    password: ''
+    host: 'db'
+    port: ''
+    name: '/opt/db'
   solr:
     host: 'localhost'
     port: 8090
