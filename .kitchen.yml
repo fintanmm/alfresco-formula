@@ -25,8 +25,74 @@ provisioner:
       top.sls:
         base:
           '*':
+            - alfresco
             - tomcat
 
+      alfresco:
+        source: "http://dl.alfresco.com/release/community/5.0.d-build-00002/alfresco-community-5.0.d.zip"
+        source_hash: sha1=9a5f97fe365188111be67ba6993bcff437b677cf
+        version: 5.0.d
+        root: /data/alfresco
+        url:
+          alfresco:
+            context: 'alfresco'
+            host: 'localhost'
+            port: 8443
+            protocol: 'https'
+          share:
+            context: 'share'
+            host: 'localhost'
+            port: 8443
+            protocol: 'https'  
+        db:
+          type: h2
+          driver: 'org.h2.Driver'
+          username: sa
+          password: ''
+          host: 'db'
+          port: ''
+          name: '/opt/db'
+        cifs:
+          enabled: 'true'
+          serverName: '${localname}A'
+          domain: 'i'
+          hostannounce: 'true'
+          ipv6: 'false'
+          tcpipSMB: 1445
+          netBIOSSMB:
+            namePort: 1137
+            datagramPort: 1138
+            sessionPort: 1139
+          WINS: 
+            autoDetectEnabled: 'true'
+        ftp:
+          enabled: 'false'
+          port: 2121
+          bindto: ''
+          dataPortFrom: ''
+          dataPortTo: ''
+          keyStore: ''
+          trustStore: ''
+          passphrase: ''
+          requireSecureSession: 'True'
+          sslEngineDebug: 'False'
+          sessionDebug: 'False'
+        imap:
+          enabled: 'True'
+          host: '0.0.0.0'
+          port: '1143'
+          from: 'alfresco@company.com'
+          to: 'alfresco@company.com'
+          attachments: 'True'
+          store: '${spaces.store}'
+          rootPath: '/${spaces.company_home.childname}'
+          folderPath: 'cm:Imap Home'
+        auth:
+          chain: 'alfrescoNtlm1:alfrescoNtlm'
+          ntlm:
+            enabled: 'True'    
+            sso: 'False'
+            mapUnknownUserToGuest: 'False'
       tomcat.sls:
         tomcat:
           security: no
@@ -99,11 +165,11 @@ provisioner:
                 className: org.apache.catalina.core.AprLifecycleListener
                 SSLEngine: "on"
   log_level: <%= ENV['SALT_DEBUG_LEVEL'] || 'info' %>
-  formula: tomcat
+  formula: alfresco
   state_top:
     base:
       '*':
-        - tomcat
+        - alfresco
         
 suites:
   - name: alfresco_share
