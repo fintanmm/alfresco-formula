@@ -24,154 +24,154 @@ provisioner:
   dependencies: 
     - {name: tomcat, path: /tmp/tomcat}
   pillars:
-      top.sls:
-        base:
-          '*':
-            - alfresco
-            - tomcat
-
-      alfresco:
-        source: "http://dl.alfresco.com/release/community/5.0.d-build-00002/alfresco-community-5.0.d.zip"
-        source_hash: sha1=9a5f97fe365188111be67ba6993bcff437b677cf
-        version: 5.0.d
-        root: /data/alfresco
-        url:
-          alfresco:
-            context: 'alfresco'
-            host: 'localhost'
+    top.sls:
+      base:
+        '*':
+          - tomcat
+          - alfresco
+    alfresco:
+      source: "http://dl.alfresco.com/release/community/5.0.d-build-00002/alfresco-community-5.0.d.zip"
+      source_hash: sha1=9a5f97fe365188111be67ba6993bcff437b677cf
+      version: 5.0.d
+      root: /data/alfresco
+      url:
+        alfresco:
+          context: 'alfresco'
+          host: 'localhost'
+          port: 8443
+          protocol: 'https'
+        share:
+          context: 'share'
+          host: 'localhost'
+          port: 8443
+          protocol: 'https'  
+      db:
+        type: h2
+        driver: 'org.h2.Driver'
+        username: sa
+        password: ''
+        host: 'db'
+        port: ''
+        name: '/opt/db'
+      cifs:
+        enabled: 'true'
+        serverName: '${localname}A'
+        domain: 'i'
+        hostannounce: 'true'
+        ipv6: 'false'
+        tcpipSMB: 1445
+        netBIOSSMB:
+          namePort: 1137
+          datagramPort: 1138
+          sessionPort: 1139
+        WINS: 
+          autoDetectEnabled: 'true'
+      ftp:
+        enabled: 'false'
+        port: 2121
+        bindto: ''
+        dataPortFrom: ''
+        dataPortTo: ''
+        keyStore: ''
+        trustStore: ''
+        passphrase: ''
+        requireSecureSession: 'True'
+        sslEngineDebug: 'False'
+        sessionDebug: 'False'
+      imap:
+        enabled: 'True'
+        host: '0.0.0.0'
+        port: '1143'
+        from: 'alfresco@company.com'
+        to: 'alfresco@company.com'
+        attachments: 'True'
+        store: '${spaces.store}'
+        rootPath: '/${spaces.company_home.childname}'
+        folderPath: 'cm:Imap Home'
+      auth:
+        chain: 'alfrescoNtlm1:alfrescoNtlm'
+        ntlm:
+          enabled: 'True'    
+          sso: 'False'
+          mapUnknownUserToGuest: 'False'
+    tomcat.sls:
+      tomcat:
+        security: no
+        expires:
+          enabled: false
+          when: '2 weeks'
+        java_opts:
+          - 'Djava.awt.headless=true'
+          - 'Xmx128m'
+          - 'XX:MaxPermSize=256m'
+          - 'XX:+UseConcMarkSweepGC'
+        limit:
+          soft: 48000
+          hard: 64000
+        connector:
+          example_connector:
             port: 8443
-            protocol: 'https'
-          share:
-            context: 'share'
-            host: 'localhost'
-            port: 8443
-            protocol: 'https'  
-        db:
-          type: h2
-          driver: 'org.h2.Driver'
-          username: sa
-          password: ''
-          host: 'db'
-          port: ''
-          name: '/opt/db'
-        cifs:
-          enabled: 'true'
-          serverName: '${localname}A'
-          domain: 'i'
-          hostannounce: 'true'
-          ipv6: 'false'
-          tcpipSMB: 1445
-          netBIOSSMB:
-            namePort: 1137
-            datagramPort: 1138
-            sessionPort: 1139
-          WINS: 
-            autoDetectEnabled: 'true'
-        ftp:
-          enabled: 'false'
-          port: 2121
-          bindto: ''
-          dataPortFrom: ''
-          dataPortTo: ''
-          keyStore: ''
-          trustStore: ''
-          passphrase: ''
-          requireSecureSession: 'True'
-          sslEngineDebug: 'False'
-          sessionDebug: 'False'
-        imap:
-          enabled: 'True'
-          host: '0.0.0.0'
-          port: '1143'
-          from: 'alfresco@company.com'
-          to: 'alfresco@company.com'
-          attachments: 'True'
-          store: '${spaces.store}'
-          rootPath: '/${spaces.company_home.childname}'
-          folderPath: 'cm:Imap Home'
-        auth:
-          chain: 'alfrescoNtlm1:alfrescoNtlm'
-          ntlm:
-            enabled: 'True'    
-            sso: 'False'
-            mapUnknownUserToGuest: 'False'
-      tomcat.sls:
-        tomcat:
-          security: no
-          expires:
-            enabled: false
-            when: '2 weeks'
-          java_opts:
-            - 'Djava.awt.headless=true'
-            - 'Xmx128m'
-            - 'XX:MaxPermSize=256m'
-            - 'XX:+UseConcMarkSweepGC'
-          limit:
-            soft: 48000
-            hard: 64000
-          connector:
-            example_connector:
-              port: 8443
-              protocol: 'org.apache.coyote.http11.Http11Protocol'
-              connectionTimeout: 20000
-              URIEncoding: 'UTF-8'
-              redirectPort: 8443
-              maxHttpHeaderSize: 8192
-              maxThreads: 150
-              minSpareThreads: 25
-              enableLookups: 'false'
-              disableUploadTimeout: 'true'
-              acceptCount: 100
-              scheme: https
-              secure: 'true'
-              SSLEnabled: 'true'
-              clientAuth: 'false'
-              sslProtocol: TLS
-              keystoreFile: '/path/to/keystoreFile'
-              keystorePass: 'somerandomtext'
-          sites:
-              example.com:
-                name: some_string
-                appBase: ../webapps/share
-                path: ''
-                docBase: '../webapps/ROOT'
-                alias: some_string
-                unpackWARs: "true"
-                autoDeploy: "true"
-                reloadable: "true"
-                debug: 0
-          manager:
-            roles:
-              - manager-gui
-              - manager-script
-              - manager-jmx
-              - manager-status
-            users:
-              saltuser1:
-                passwd: somepassword
-                roles: manager-gui,manager-script,manager-jmx,manager-status
-              saltuser2:
-                passwd: somepassword
-                roles: manager-gui,manager-script,manager-jmx,manager-status
-          cluster:
-            simple: false
-          context:
-            Environment:
-              env.first:
-                name: env.first
-                value: first.text
-                type: java.lang.String
-                override: true
-            Listener:
-              second:
-                className: org.apache.catalina.core.AprLifecycleListener
-                SSLEngine: "on"
+            protocol: 'org.apache.coyote.http11.Http11Protocol'
+            connectionTimeout: 20000
+            URIEncoding: 'UTF-8'
+            redirectPort: 8443
+            maxHttpHeaderSize: 8192
+            maxThreads: 150
+            minSpareThreads: 25
+            enableLookups: 'false'
+            disableUploadTimeout: 'true'
+            acceptCount: 100
+            scheme: https
+            secure: 'true'
+            SSLEnabled: 'true'
+            clientAuth: 'false'
+            sslProtocol: TLS
+            keystoreFile: '/path/to/keystoreFile'
+            keystorePass: 'somerandomtext'
+        sites:
+            example.com:
+              name: some_string
+              appBase: ../webapps/share
+              path: ''
+              docBase: '../webapps/ROOT'
+              alias: some_string
+              unpackWARs: "true"
+              autoDeploy: "true"
+              reloadable: "true"
+              debug: 0
+        manager:
+          roles:
+            - manager-gui
+            - manager-script
+            - manager-jmx
+            - manager-status
+          users:
+            saltuser1:
+              passwd: somepassword
+              roles: manager-gui,manager-script,manager-jmx,manager-status
+            saltuser2:
+              passwd: somepassword
+              roles: manager-gui,manager-script,manager-jmx,manager-status
+        cluster:
+          simple: false
+        context:
+          Environment:
+            env.first:
+              name: env.first
+              value: first.text
+              type: java.lang.String
+              override: true
+          Listener:
+            second:
+              className: org.apache.catalina.core.AprLifecycleListener
+              SSLEngine: "on"
   log_level: <%= ENV['SALT_DEBUG_LEVEL'] || 'info' %>
   formula: alfresco
   state_top:
     base:
       '*':
         - alfresco
+        - tomcat
         
 suites:
   - name: alfresco_share
