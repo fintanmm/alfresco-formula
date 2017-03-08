@@ -11,3 +11,11 @@ copy-share-war:
     - makedirs: True
     - user: {{ alfresco.user }}
     - group: {{ alfresco.group }}
+
+{{ alfresco.tomcat_dir }}/shared/classes/alfresco/web-extension/share-config-custom.xml:
+  file.managed:
+    - source: salt://alfresco/files/share-config-custom.xml.tmpl
+    - user: {{ alfresco.user }}
+    - group: {{ alfresco.group }}
+    - mode: 644
+    - template: jinja 
