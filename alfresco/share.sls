@@ -1,7 +1,7 @@
 {% from "alfresco/map.jinja" import alfresco with context %}
 
 include:
-  - .url
+  - alfresco.url
 
 copy-share-war:
   file.copy:
