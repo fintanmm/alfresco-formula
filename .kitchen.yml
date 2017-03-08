@@ -182,4 +182,5 @@ suites:
           '*':
             - tomcat.config
             - tomcat.context
+            - alfresco
             - alfresco.share
