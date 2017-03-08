@@ -17,7 +17,7 @@ share-url-block-replace:
     - marker_start: "# SHARE URL : salt managed zone"
     - marker_end: "# SHARE URL ENDS : salt managed zone --"
     - content: |
-        share.context={{ salt['pillar.get']('alfresco:url:ldap:context', 'share') }}
-        share.host=a{{ salt['pillar.get']('alfresco:url:ldap:host', salt['grains.get']('host')) }}
-        share.port={{ salt['pillar.get']('alfresco:url:ldap:port', '8080') }}
-        share.protocol={{ salt['pillar.get']('alfresco:url:ldap:protocol', 'http') }}
+        share.context={{ salt['pillar.get']('alfresco:url:share:context', 'share') }}
+        share.host=a{{ salt['pillar.get']('alfresco:url:share:host', salt['grains.get']('host')) }}
+        share.port={{ salt['pillar.get']('alfresco:url:share:port', '8080') }}
+        share.protocol={{ salt['pillar.get']('alfresco:url:share:protocol', 'http') }}
