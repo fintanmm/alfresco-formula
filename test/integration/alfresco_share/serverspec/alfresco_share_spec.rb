@@ -3,11 +3,17 @@ require_relative '../../../kitchen/data/spec_helper'
 describe 'alfresco/share.sls' do
   case os[:family]
   when 'ubuntu'
+    share_war = '/var/lib/tomcat7/webapps/share.war'
     global_properties = '/var/lib/tomcat7/shared/classes/alfresco-global.properties'
     share_custom_config = '/var/lib/tomcat7/shared/classes/alfresco/web-extension/share-config-custom.xml'
     catalina_logfile = '/var/log/tomcat7/catalina.out'
     service = 'tomcat7'
     user = 'tomcat7'
+  end
+
+  describe file(share_war) do
+    it { should be_file }
+    it { should be_owned_by user }
   end
 
   describe file(global_properties) do
@@ -18,7 +24,7 @@ describe 'alfresco/share.sls' do
     its(:content) { should match(/share.host=localhost/) }
     its(:content) { should match(/share.port=8080/) }
     its(:content) { should match(/share.protocol=http/) }
-  end
+  end  
 
   describe file(share_custom_config) do
     it { should be_file }
