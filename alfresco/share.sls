@@ -18,4 +18,5 @@ copy-share-war:
     - user: {{ alfresco.user }}
     - group: {{ alfresco.group }}
     - mode: 644
+    - makedirs: True
     - template: jinja 
