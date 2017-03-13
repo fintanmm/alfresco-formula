@@ -7,7 +7,7 @@ alfresco-url-block-replace:
     - marker_end: "# ALFRESCO URL ENDS : salt managed zone --"
     - content: |
         alfresco.context={{ salt['pillar.get']('alfresco:url:alfresco:context', 'alfresco') }}
-        alfresco.host=a{{ salt['pillar.get']('alfresco:url:alfresco:host', salt['grains.get']('host')) }}
+        alfresco.host={{ salt['pillar.get']('alfresco:url:alfresco:host', salt['grains.get']('host')) }}
         alfresco.port={{ salt['pillar.get']('alfresco:url:alfresco:port', '8080') }}
         alfresco.protocol={{ salt['pillar.get']('alfresco:url:alfresco:protocol', 'http') }}
 
@@ -18,6 +18,6 @@ share-url-block-replace:
     - marker_end: "# SHARE URL ENDS : salt managed zone --"
     - content: |
         share.context={{ salt['pillar.get']('alfresco:url:share:context', 'share') }}
-        share.host=a{{ salt['pillar.get']('alfresco:url:share:host', salt['grains.get']('host')) }}
+        share.host={{ salt['pillar.get']('alfresco:url:share:host', salt['grains.get']('host')) }}
         share.port={{ salt['pillar.get']('alfresco:url:share:port', '8080') }}
         share.protocol={{ salt['pillar.get']('alfresco:url:share:protocol', 'http') }}
