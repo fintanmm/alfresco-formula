@@ -21,7 +21,11 @@ install:
   - git clone https://github.com/saltstack-formulas/tomcat-formula.git /tmp/tomcat
   - wget http://repo1.maven.org/maven2/com/h2database/h2/1.4.190/h2-1.4.190.jar -O /opt/h2-1.4.190.jar
   - java -cp /opt/h2-1.4.190.jar org.h2.tools.Server -web -webPort 8081 -webAllowOthers -tcp -tcpPort 8082 -tcpAllowOthers -baseDir /opt/db &
-  - sudo apt install libxml2-utils
   - bundle install
+
+addons:
+  apt:
+    packages:
+    - libxml2-utils
 
 script: bundle exec kitchen verify ${INSTANCE}
