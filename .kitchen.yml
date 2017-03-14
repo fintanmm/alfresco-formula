@@ -184,3 +184,12 @@ suites:
             - tomcat.context
             - alfresco
             - alfresco.share
+  - name: alfresco_repo
+    provisioner:
+      state_top:
+        base:
+          '*':
+            - tomcat.config
+            - tomcat.context
+            - alfresco
+            - alfresco.repo
