@@ -14,7 +14,6 @@ env:
 # https://github.com/zuazo/kitchen-in-travis-native/issues/1#issuecomment-142455888
 before_script: 
   - sudo iptables -L DOCKER || sudo iptables -N DOCKER
-  - xmllint --version
 
 install:
   # setup ci for test formula
@@ -23,10 +22,5 @@ install:
   - wget http://repo1.maven.org/maven2/com/h2database/h2/1.4.190/h2-1.4.190.jar -O /opt/h2-1.4.190.jar
   - java -cp /opt/h2-1.4.190.jar org.h2.tools.Server -web -webPort 8081 -webAllowOthers -tcp -tcpPort 8082 -tcpAllowOthers -baseDir /opt/db &
   - bundle install
-
-addons:
-  apt:
-    packages:
-    - libxml2-utils
 
 script: bundle exec kitchen verify ${INSTANCE}

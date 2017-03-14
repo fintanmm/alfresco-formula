@@ -9,6 +9,10 @@ describe 'alfresco/share.sls' do
     catalina_logfile = '/var/log/tomcat7/catalina.out'
     service = 'tomcat7'
     user = 'tomcat7'
+
+    describe command("apt install libxml2-utils") do
+      its(:exit_status) { should eq 0 }
+    end    
   end
 
   describe file(share_war) do
