@@ -179,5 +179,26 @@ alfresco:
         groupType: 'group'
         personType: 'user'
         groupMemberAttributeName: 'member'
-        enableProgressEstimation: 'True'        
+        enableProgressEstimation: 'True'
+      kerberos:
+        realm: WWW.EXAMPLE.COM
+        sso:
+          enabled: 'True'
+        fallback:
+          enabled: 'True'
+        authenticateCIFS: 'True'
+        cifs:
+          password: randompassword
+        http:
+          password: randompassword
+        user:
+          configEntry: Alfresco
+        cifs:
+          configEntry: AlfrescoCIFS
+        http:
+          configEntry: AlfrescoHTTP
+        defaultAdministratorUserNames: 'admin,administrator'
+        browswer:
+          ticketLogons: 'True'
+        stripUsernameSuffix: 'True'
 

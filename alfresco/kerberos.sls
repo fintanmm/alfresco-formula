@@ -10,8 +10,8 @@ passthru-block-replace:
         kerberos.authentication.sso.enabled={{ salt['pillar.get']('alfresco:auth:kerberos:sso:enabled', 'true') }}
         kerberos.authentication.sso.fallback.enabled={{ salt['pillar.get']('alfresco:auth:kerberos:fallback:enabled', 'true') }}
         kerberos.authentication.authenticateCIFS={{ salt['pillar.get']('alfresco:auth:kerberos:authenticateCIFS', 'true') }}
-        kerberos.authentication.cifs.password={{ salt['pillar.get']('alfresco:auth:kerberos:cifs:password', 'Cifs-Alfr3sc0') }}
-        kerberos.authentication.http.password={{ salt['pillar.get']('alfresco:auth:kerberos:http:password', 'Http-Alfr3sc0') }}
+        kerberos.authentication.cifs.password={{ salt['pillar.get']('alfresco:auth:kerberos:cifs:password') }}
+        kerberos.authentication.http.password={{ salt['pillar.get']('alfresco:auth:kerberos:http:password') }}
         kerberos.authentication.user.configEntryName={{ salt['pillar.get']('alfresco:auth:kerberos:user:configEntryName', 'Alfresco') }}
         kerberos.authentication.cifs.configEntryName={{ salt['pillar.get']('alfresco:auth:kerberos:cifs:configEntryName', 'AlfrescoCIFS') }}
         kerberos.authentication.http.configEntryName={{ salt['pillar.get']('alfresco:auth:kerberos:http:configEntryName', 'AlfrescoHTTP') }}
