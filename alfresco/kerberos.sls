@@ -1,6 +1,6 @@
 {% from "alfresco/map.jinja" import alfresco with context %}
 
-passthru-block-replace:
+kerberos-block-replace:
   file.blockreplace:
     - name: {{ alfresco.tomcat_dir }}/shared/classes/alfresco-global.properties
     - marker_start: "# KERBEROS : salt managed zone"
