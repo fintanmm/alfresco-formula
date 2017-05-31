@@ -26,6 +26,24 @@ alfresco:
     host: 'localhost'
     port: 8090
     ssl: 8443
+  externaltools:
+    ooo:
+      exe: /usr/bin/soffice
+      enabled: 'true'
+      host: 'localhost'
+      port: 8100
+    img:
+      root: /usr
+      dyn: '${img.root/lib}'
+      exe: '${img.root/bin/convert}'
+    swf:
+      exe: /usr/bin/pdf2swf
+    jodconverter:
+      enabled: 'True'
+      officeHome: /usr/lib/libreoffice
+      portNumbers: 8100
+    ffmpeg:
+      exe: /usr/bin/ffmpeg
   cifs:
     enabled: 'False'
     serverName: ''
