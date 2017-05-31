@@ -26,6 +26,9 @@ alfresco:
     host: 'localhost'
     port: 8090
     ssl: 8443
+  opencmis:
+    server:
+      value: 'https://www.example.com'
   externaltools:
     ooo:
       exe: /usr/bin/soffice
