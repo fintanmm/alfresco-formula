@@ -1,10 +1,10 @@
 {% from "alfresco/map.jinja" import alfresco with context %}
 
-{% set ntlm = salt['pillar.get']('alfresco:auth:ntlm:enabled')|title %}
-{% set passthru = salt['pillar.get']('alfresco:auth:passthru:enabled')|title %}
-{% set kerberos = salt['pillar.get']('alfresco:auth:kerberos:enabled')|title %}
+{% set ntlm = salt['pillar.get']('alfresco:auth:ntlm') %}
+{% set passthru = salt['pillar.get']('alfresco:auth:passthru') %}
+{% set kerberos = salt['pillar.get']('alfresco:auth:kerberos') %}
 
-{% if ntlm == 'True' or passthru == 'True' or kerberos == 'True' %}
+{% if ntlm or passthru or kerberos %}
 cifs-block-replace:
   file.blockreplace:
     - name: {{ alfresco.tomcat_dir }}/shared/classes/alfresco-global.properties
