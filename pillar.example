@@ -110,8 +110,7 @@ alfresco:
       allowed: '*.alfresco.org'
       blocked: '*.alfresco.org'
   auth:
-    chain: 'alfrescoNtlm1:alfrescoNtlm,passthru1:passthru,ldap1:ldap'
-    ntlm:
+    alfrescoNtlm:
       enabled: 'False'
       sso: 'False'
       mapUnknownUserToGuest: 'False'
