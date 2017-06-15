@@ -193,3 +193,4 @@ suites:
             - tomcat.context
             - alfresco
             - alfresco.repo
+            - alfresco.auth

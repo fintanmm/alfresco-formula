@@ -27,7 +27,9 @@ describe 'alfresco/repo.sls' do
     its(:content) { should contain('share.context=share') }
     its(:content) { should contain('share.host=localhost') }
     its(:content) { should contain('share.port=8080') }
-    its(:content) { should contain('share.protocol=http') }    
+    its(:content) { should contain('share.protocol=http') }
+
+    its(:content) { should contain('authentication.chain=') }
   end  
 
   describe service(service) do
